@@ -3,17 +3,6 @@ var router = express.Router();
 var axios = require('axios');
 var _ = require('lodash');
 
-// var usersCollection = [];
-//
-// function createUserObject(userString) {
-//     var userObject = {};
-//     const userArray = _.split(userString, '&');
-//     _.forEach(userArray, function (dataString) {
-//         const data = _.split(dataString, '=');
-//         userObject[data[0]] = data[1];
-//     });
-//     usersCollection.push(userObject);
-// }
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -30,16 +19,22 @@ router.get('/', function(req, res, next) {
                 });
                 usersCollection.push(userObject);
             });
-            // console.log(usersCollection);
-            res.render('index', { title: 'Users List', users:  JSON.stringify(usersCollection) });
+
+            var uniqueCompany = _.unionBy(usersCollection, 'companyName');
+            var uniqueUniversity = _.unionBy(usersCollection, 'university');
+
+            res.render('index', {
+                title: 'Users List',
+                users:  JSON.stringify(usersCollection),
+                uniqueCompanies: JSON.stringify(uniqueCompany),
+                uniqueUniversity: JSON.stringify(uniqueUniversity)
+            });
         })
         .catch(function (error) {
             console.log(error);
             res.render('index', { title: 'Users List', users:  JSON.stringify(usersCollection) });
         });
 
-  // res.render('index', { title: 'Users List', users:  JSON.stringify(usersCollection) });
-  // usersCollection = [];
 });
 
 module.exports = router;

@@ -15,24 +15,56 @@
     </thead>
 </table>
 
+<table id="company-table" class="display" width="100%">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+        </tr>
+    </thead>
+</table>
+
+<table id="university-table" class="display" width="100%">
+    <thead>
+        <tr>
+            <th>University</th>
+        </tr>
+    </thead>
+</table>
+
 <script>
     var users = {{{users}}};
+    var uniqueCompanies = {{{uniqueCompanies}}};
+    var uniqueUniversity = {{{uniqueUniversity}}};
 
 $(document).ready(function() {
-$('#users-table').DataTable( {
-data: users,
-columns: [
-    { "data": "id" },
-    { "data": "firstName" },
-    { "data": "lastName" },
-    { "data": "email" },
-    { "data": "gender" },
-    { "data": "companyName" },
-    { "data": "jobTitle" },
-    { "data": "university" },
-    { "data": "skill" }
-]
-} );
+    $('#users-table').DataTable( {
+    data: users,
+    columns: [
+        { "data": "id" },
+        { "data": "firstName" },
+        { "data": "lastName" },
+        { "data": "email" },
+        { "data": "gender" },
+        { "data": "companyName" },
+        { "data": "jobTitle" },
+        { "data": "university" },
+        { "data": "skill" }
+    ]
+    } );
+
+    $('#company-table').DataTable( {
+        data: uniqueCompanies,
+        columns: [
+            { "data": "companyName" }
+        ]
+    } );
+
+    $('#university-table').DataTable( {
+        data: uniqueUniversity,
+        columns: [
+            { "data": "university" }
+        ]
+    } );
 } );
 
 </script>
