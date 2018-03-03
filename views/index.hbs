@@ -1,6 +1,29 @@
-<h1>{{title}}</h1>
-<table id="users-table" class="display" width="100%">
-    <thead>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#"><img src="/images/logo.png" width="100px" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#user">Users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#company">Companies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#university">Universities</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<br>
+<div class="users-section" id="user">
+    <h1>{{title}}</h1>
+    <table id="users-table" class="display" width="100%">
+        <thead>
         <tr>
             <th>ID</th>
             <th>First Name</th>
@@ -12,24 +35,39 @@
             <th>University</th>
             <th>Skill</th>
         </tr>
-    </thead>
-</table>
+        </thead>
+    </table>
+</div>
 
-<table id="company-table" class="display" width="100%">
-    <thead>
+<br>
+
+<div class="company-section" id="company">
+    <h1>Unique Company List</h1>
+    <table id="company-table" class="display" width="100%">
+        <thead>
         <tr>
             <th>Company Name</th>
         </tr>
-    </thead>
-</table>
+        </thead>
+    </table>
+</div>
 
-<table id="university-table" class="display" width="100%">
-    <thead>
+<br>
+
+<div class="university-section" id="university">
+    <h1>Unique University List</h1>
+    <table id="university-table" class="display" width="100%">
+        <thead>
         <tr>
             <th>University</th>
         </tr>
-    </thead>
-</table>
+        </thead>
+    </table>
+</div>
+
+<br><br>
+
+
 
 <script>
     var users = {{{users}}};

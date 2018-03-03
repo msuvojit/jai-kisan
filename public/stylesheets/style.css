@@ -1,8 +1,41 @@
 body {
-  padding: 50px;
+  /*padding: 0 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+}
+
+.navbar.navbar-expand-lg {
+  background: black;
+  padding: 5px 40px;
+}
+
+.navbar .nav-link {
+  color: white;
+}
+
+.users-section {
+  padding: 10px 40px;
+}
+
+.users-section h1 {
+  text-align: center;
+}
+
+.company-section {
+  padding: 10px 40px;
+}
+
+.company-section h1 {
+  text-align: center;
+}
+
+.university-section {
+  padding: 10px 40px;
+}
+
+.university-section h1 {
+  text-align: center;
 }
